@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<p><h1>Koba Cake</h1></p>
+    <h1>Koba Cake</h1>
+    <h2>Наши позиции</h2>
+    {%for i in data%}
+    <h3>Десерт {{forloop.counter}}</h3>
+
+    Название: {{i.name}}
+    Вкус: {{i.second_name}}
+
+    Цена:
+    {% if i.salary > 1000 %}
+    <b style="color:green"> {{i.salary}} </b>
+    {% else %}
+    <b style="color:red"> {{i.salary}} </b>
+    {% endif %}
+{% endfor %}
 </body>
 </html>
